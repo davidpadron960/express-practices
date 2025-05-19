@@ -24,11 +24,13 @@ app.get("/users/:username/photo",(req,res) => {
  res.send("El usuario no tiene acceso")
 })
 
+// middleware
 app.use((req,res,next) => {
   console.log('paso por aqui')
   next()
 })
 
+// middleware
 app.use((req,res,next) => {
   if (req.query.login === 'davidpadron@gmail.com'){
     next()
